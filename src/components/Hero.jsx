@@ -62,7 +62,21 @@ const Hero = () => {
 
         {/* Right Image/Visual */}
         <div className="relative animate-float hidden md:block">
-          <div className="glass-card aspect-square rounded-full flex items-center justify-center p-8 relative z-10 w-4/5 mx-auto before:content-[''] before:absolute before:inset-0 before:rounded-full before:border-2 before:border-transparent before:before:bg-gradient-to-tr before:from-violet-600/50 before:via-slate-950/20 before:to-transparent before:[-webkit-mask-image:linear-gradient(white,white)] before:[-webkit-mask-composite:xor] before:[mask-image:linear-gradient(white,white)] before:[mask-composite:exclude]">
+          <div className="glass-card aspect-square rounded-full flex items-center justify-center p-8 relative z-10 w-4/5 mx-auto 
+before:content-[''] 
+before:absolute 
+before:inset-0 
+before:rounded-full 
+before:border-2 
+before:border-transparent 
+before:bg-gradient-to-tr 
+before:from-violet-600/50 
+before:via-slate-950/20 
+before:to-transparent 
+before:[-webkit-mask-image:linear-gradient(white,white)] 
+before:[-webkit-mask-composite:xor] 
+before:[mask-image:linear-gradient(white,white)] 
+before:[mask-composite:exclude]">
             {/* Placeholder for image */}
             <div className="w-full h-full rounded-full bg-space-700/50 flex items-center justify-center border border-white/5 overflow-hidden">
               <img src={profileImg} alt="Ravindu Nirman" className="w-full h-full object-cover" />
