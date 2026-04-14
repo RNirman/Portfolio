@@ -11,9 +11,41 @@ const Hero = () => {
       {/* Starry layer simulation */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+Cjwvc3ZnPg==')] -z-20 opacity-50"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center w-full">
+        {/* Right Image/Visual */}
+        <div className="relative animate-float order-1 md:order-2 mx-auto w-full max-w-sm md:max-w-none mt-6 md:mt-0">
+          <div className="glass-card aspect-square rounded-full flex items-center justify-center p-8 relative z-10 w-4/5 mx-auto 
+before:content-[''] 
+before:absolute 
+before:inset-0 
+before:rounded-full 
+before:border-2 
+before:border-transparent 
+before:bg-gradient-to-tr 
+before:from-violet-600/50 
+before:via-slate-950/20 
+before:to-transparent 
+before:[-webkit-mask-image:linear-gradient(white,white)] 
+before:[-webkit-mask-composite:xor] 
+before:[mask-image:linear-gradient(white,white)] 
+before:[mask-composite:exclude]">
+            {/* Placeholder for image */}
+            <div className="w-full h-full rounded-full bg-space-700/50 flex items-center justify-center border border-white/5 overflow-hidden">
+              <img src={profileImg} alt="Ravindu Nirman" className="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          {/* Floating tech stack icons decoration */}
+          <div className="hidden md:flex absolute top-10 right-10 w-12 h-12 glass-card rounded-xl flex items-center justify-center rotate-12 delay-100">
+            <span className="text-accent-primary font-bold text-xl">{'</>'}</span>
+          </div>
+          <div className="hidden md:flex absolute bottom-10 left-10 w-14 h-14 glass-card rounded-xl flex items-center justify-center -rotate-6 delay-300">
+            <span className="text-accent-secondary font-bold text-xl">{'{ }'}</span>
+          </div>
+        </div>
+
         {/* Left Content */}
-        <div className="flex flex-col items-start z-10">
+        <div className="flex flex-col items-start z-10 order-2 md:order-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-primary/10 border border-accent-primary/20 text-accent-primary text-xs font-medium mb-6">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"></span>
@@ -60,37 +92,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Image/Visual */}
-        <div className="relative animate-float hidden md:block">
-          <div className="glass-card aspect-square rounded-full flex items-center justify-center p-8 relative z-10 w-4/5 mx-auto 
-before:content-[''] 
-before:absolute 
-before:inset-0 
-before:rounded-full 
-before:border-2 
-before:border-transparent 
-before:bg-gradient-to-tr 
-before:from-violet-600/50 
-before:via-slate-950/20 
-before:to-transparent 
-before:[-webkit-mask-image:linear-gradient(white,white)] 
-before:[-webkit-mask-composite:xor] 
-before:[mask-image:linear-gradient(white,white)] 
-before:[mask-composite:exclude]">
-            {/* Placeholder for image */}
-            <div className="w-full h-full rounded-full bg-space-700/50 flex items-center justify-center border border-white/5 overflow-hidden">
-              <img src={profileImg} alt="Ravindu Nirman" className="w-full h-full object-cover" />
-            </div>
-          </div>
-
-          {/* Floating tech stack icons decoration */}
-          <div className="absolute top-10 right-10 w-12 h-12 glass-card rounded-xl flex items-center justify-center rotate-12 delay-100">
-            <span className="text-accent-primary font-bold text-xl">{'</>'}</span>
-          </div>
-          <div className="absolute bottom-10 left-10 w-14 h-14 glass-card rounded-xl flex items-center justify-center -rotate-6 delay-300">
-            <span className="text-accent-secondary font-bold text-xl">{'{ }'}</span>
-          </div>
-        </div>
       </div>
     </section>
   );
