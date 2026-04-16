@@ -20,7 +20,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-accent-primary tracking-widest uppercase mb-2">About Me</h2>
@@ -29,7 +29,7 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="space-y-6 text-gray-400 leading-relaxed">
+          <div className="space-y-6 text-gray-400 leading-relaxed text-center md:text-left">
             <p>
               I am a <strong>Computer Science</strong> undergraduate with a deep 
               passion for solving complex problems through elegant code. I specialize in the 

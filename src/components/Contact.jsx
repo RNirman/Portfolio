@@ -37,14 +37,14 @@ const Contact = () => {
   const handleChange = (e) => setFormData({ ...formData, [e.target.id]: e.target.value });
 
   return (
-    <section id="contact" className="py-24 relative bg-space-800/30">
+    <section id="contact" className="py-16 sm:py-24 relative bg-space-800/30">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-accent-primary tracking-widest uppercase mb-2">Get in touch</h2>
           <h3 className="text-3xl md:text-4xl font-extrabold">Let's Work Together</h3>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch">
           {/* Contact Info */}
           <div>
             <h4 className="text-2xl font-display font-bold text-white mb-4">Have an idea?</h4>
@@ -76,7 +76,7 @@ const Contact = () => {
           </div>
 
           {/* Form */}
-          <div className="glass-card p-8 relative">
+          <div className="glass-card p-6 sm:p-8 relative">
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Name</label>

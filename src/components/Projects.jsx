@@ -59,7 +59,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-16 sm:py-24 relative">
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-accent-glow/10 rounded-full blur-[100px] -z-10 animate-pulse delay-700"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -68,11 +68,11 @@ const Projects = () => {
           <h3 className="text-3xl md:text-4xl font-extrabold">Featured Projects</h3>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, idx) => (
             <div key={idx} className="glass-card flex flex-col h-full overflow-hidden group">
               {/* Image Container */}
-              <div className="h-48 bg-space-700 w-full relative overflow-hidden border-b border-white/5">
+              <div className="h-56 sm:h-48 bg-space-700 w-full relative overflow-hidden border-b border-white/5">
                 <img
                   src={project.image}
                   alt={project.title}

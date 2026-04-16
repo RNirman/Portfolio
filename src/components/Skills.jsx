@@ -41,16 +41,16 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 relative bg-space-800/20">
+    <section id="skills" className="py-16 sm:py-24 relative bg-space-800/20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-accent-secondary tracking-widest uppercase mb-2">My Toolbox</h2>
           <h3 className="text-3xl md:text-4xl font-extrabold">Skills & Technologies</h3>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, idx) => (
-            <div key={idx} className="glass-card p-8 group">
+            <div key={idx} className="glass-card p-6 sm:p-8 group">
               <h4 className="text-xl text-white font-bold mb-6 flex items-center justify-between border-b border-white/10 pb-4">
                 <span className="flex items-center gap-3">
                   <span className="text-accent-primary">{category.icon}</span>
