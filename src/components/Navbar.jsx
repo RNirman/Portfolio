@@ -51,7 +51,6 @@ const Navbar = () => {
           <span className="text-accent-primary">/&gt;</span>
         </a>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a key={link.name} href={link.href}
@@ -65,7 +64,6 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* ✅ Accessible Mobile Menu Button */}
         <button
           className="md:hidden text-gray-300 hover:text-white transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

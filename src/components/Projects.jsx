@@ -60,7 +60,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-16 sm:py-24 relative">
-      {/* ✅ Responsive blob — no longer causes horizontal scroll on mobile */}
       <div className="absolute top-1/2 left-0 w-[200px] h-[200px] md:w-[500px] md:h-[500px] bg-accent-glow/10 rounded-full blur-[80px] md:blur-[100px] -z-10 animate-pulse delay-700"></div>
 
       {/* ✅ px-4 base padding on mobile */}
@@ -74,7 +73,6 @@ const Projects = () => {
           {projects.map((project, idx) => (
             <div key={idx} className="glass-card flex flex-col h-full overflow-hidden group">
 
-              {/* ✅ Consistent image height across breakpoints */}
               <div className="h-48 sm:h-52 bg-space-700 w-full relative overflow-hidden border-b border-white/5">
                 <img
                   src={project.image}
@@ -85,12 +83,10 @@ const Projects = () => {
               </div>
 
               <div className="p-5 sm:p-6 flex flex-col flex-grow">
-                {/* ✅ line-clamp-2 keeps title to max 2 lines so all cards align */}
                 <h4 className="text-lg sm:text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-accent-primary transition-colors">
                   {project.title}
                 </h4>
 
-                {/* ✅ line-clamp-3 keeps descriptions uniform height across cards */}
                 <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-grow line-clamp-3">
                   {project.description}
                 </p>

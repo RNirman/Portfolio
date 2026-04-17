@@ -5,7 +5,6 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
 
-      {/* ✅ Responsive background blobs — fixed sizes cause horizontal scroll on mobile */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[600px] md:h-[600px] bg-accent-secondary/20 rounded-full blur-[80px] md:blur-[120px] -z-10 animate-pulse"></div>
       <div className="absolute top-1/4 right-1/4 w-[150px] h-[150px] md:w-[300px] md:h-[300px] bg-accent-primary/20 rounded-full blur-[60px] md:blur-[90px] -z-10"></div>
 
@@ -13,7 +12,6 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full py-10 md:py-0">
 
-        {/* ✅ Image: order-1 on mobile (shows AFTER text via order-2 on text div) */}
         <div className="relative animate-float order-2 md:order-2 mx-auto w-full max-w-[240px] sm:max-w-xs md:max-w-none mt-2 md:mt-0">
           <div className="glass-card aspect-square rounded-full flex items-center justify-center p-8 relative z-10 w-4/5 mx-auto
               before:content-['']
@@ -35,7 +33,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Floating decorations — hidden on mobile to reduce clutter */}
           <div className="hidden md:flex absolute top-10 right-10 w-12 h-12 glass-card rounded-xl items-center justify-center rotate-12 delay-100">
             <span className="text-accent-primary font-bold text-xl">{'</>'}</span>
           </div>
@@ -44,7 +41,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* ✅ Text: order-1 on mobile so it always appears first */}
         <div className="flex flex-col items-start z-10 order-1 md:order-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-primary/10 border border-accent-primary/20 text-accent-primary text-xs font-medium mb-5 md:mb-6">
             <span className="relative flex h-2 w-2">
@@ -54,7 +50,6 @@ const Hero = () => {
             Available for Internships
           </div>
 
-          {/* ✅ Responsive heading — starts smaller on mobile */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
             Hi, I'm <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary animate-gradient">
@@ -62,12 +57,10 @@ const Hero = () => {
             </span>
           </h1>
 
-          {/* ✅ Slightly smaller subtitle on mobile */}
           <h2 className="text-lg md:text-xl lg:text-2xl text-gray-400 font-medium mb-6 max-w-lg leading-relaxed">
             A Computer Science Undergraduate with a focus on Software Engineering.
           </h2>
 
-          {/* ✅ Stack buttons vertically on very small screens, row on sm+ */}
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 mb-8 md:mb-10 w-full sm:w-auto">
             <a href="#projects" className="btn-primary flex items-center justify-center gap-2 group">
               View My Work

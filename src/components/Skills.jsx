@@ -15,14 +15,12 @@ const Skills = () => {
     {
       title: 'Backend & Tools',
       icon: <FiDatabase size={24} />,
-      // ✅ Grouped in 3s so the inner grid always fills rows cleanly
       skills: ['Node.js', 'Express', 'Spring Boot', 'MySQL', 'MongoDB', 'Git', 'GitHub', 'Postman', 'Docker'],
     },
   ];
 
   return (
     <section id="skills" className="py-16 sm:py-24 relative bg-space-800/20">
-      {/* ✅ px-4 on mobile, steps up at sm and md */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
 
         <div className="text-center mb-12 md:mb-16">
@@ -32,12 +30,10 @@ const Skills = () => {
           <h3 className="text-3xl md:text-4xl font-extrabold">Skills & Technologies</h3>
         </div>
 
-        {/* ✅ sm:grid-cols-2 fills space on large phones/tablets before lg kicks in */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {skillCategories.map((category, idx) => (
             <div
               key={idx}
-              // ✅ Last card spans full width on sm (2-col layout) so it doesn't sit alone
               className={`glass-card p-6 sm:p-8 group ${
                 idx === skillCategories.length - 1 && skillCategories.length % 2 !== 0
                   ? 'sm:col-span-2 lg:col-span-1'
@@ -52,7 +48,6 @@ const Skills = () => {
                 <span className="w-8 h-1 bg-gradient-to-r from-accent-primary to-transparent rounded-full group-hover:w-16 transition-all duration-300"></span>
               </h4>
 
-              {/* ✅ flex-wrap instead of a fixed grid — pills reflow naturally on any width */}
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, i) => (
                   <span
