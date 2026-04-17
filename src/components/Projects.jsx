@@ -14,7 +14,7 @@ const Projects = () => {
       tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Supabase', 'Dall-E 3'],
       github: 'https://github.com/kalinduhimasara07/WoodWise-BackEnd.git',
       demo: 'https://wood-wise-xi.vercel.app/',
-      image: woodwiseImg
+      image: woodwiseImg,
     },
     {
       title: 'RentIt - Renting Platform',
@@ -22,7 +22,7 @@ const Projects = () => {
       tags: ['React', 'PHP', 'MySQL'],
       github: 'https://github.com/Thinuj01/RenItNew.git',
       demo: '#',
-      image: rentitImg
+      image: rentitImg,
     },
     {
       title: 'MovieSphere - Movie Discovery',
@@ -30,7 +30,7 @@ const Projects = () => {
       tags: ['React', 'Spring Boot', 'MySQL', 'TMDB API'],
       github: 'https://github.com/RNirman/MovieSphere-backend.git',
       demo: '#',
-      image: moviesphereImg
+      image: moviesphereImg,
     },
     {
       title: 'FlixFinder - Movie Discovery App',
@@ -38,7 +38,7 @@ const Projects = () => {
       tags: ['Android', 'Kotlin', 'TMDB API'],
       github: 'https://github.com/Lahirulakshan129/Flix-finder.git',
       demo: '#',
-      image: flixfinderImg
+      image: flixfinderImg,
     },
     {
       title: 'SnapVault - Photo Sharing',
@@ -46,7 +46,7 @@ const Projects = () => {
       tags: ['React', 'FastAPI', 'MongoDB'],
       github: 'https://github.com/RNirman/SnapVault-frontend.git',
       demo: '#',
-      image: snapvaultImg
+      image: snapvaultImg,
     },
     {
       title: 'AuraCast - Weather Dashboard',
@@ -54,16 +54,18 @@ const Projects = () => {
       tags: ['React', 'Next.js', 'OpenWeatherMap API'],
       github: 'https://github.com/RNirman/AuraCast.git',
       demo: '#',
-      image: auracastImg
-    }
+      image: auracastImg,
+    },
   ];
 
   return (
     <section id="projects" className="py-16 sm:py-24 relative">
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-accent-glow/10 rounded-full blur-[100px] -z-10 animate-pulse delay-700"></div>
+      {/* ✅ Responsive blob — no longer causes horizontal scroll on mobile */}
+      <div className="absolute top-1/2 left-0 w-[200px] h-[200px] md:w-[500px] md:h-[500px] bg-accent-glow/10 rounded-full blur-[80px] md:blur-[100px] -z-10 animate-pulse delay-700"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="text-center mb-16">
+      {/* ✅ px-4 base padding on mobile */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-sm font-bold text-accent-primary tracking-widest uppercase mb-2">My Work</h2>
           <h3 className="text-3xl md:text-4xl font-extrabold">Featured Projects</h3>
         </div>
@@ -71,22 +73,29 @@ const Projects = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, idx) => (
             <div key={idx} className="glass-card flex flex-col h-full overflow-hidden group">
-              {/* Image Container */}
-              <div className="h-56 sm:h-48 bg-space-700 w-full relative overflow-hidden border-b border-white/5">
+
+              {/* ✅ Consistent image height across breakpoints */}
+              <div className="h-48 sm:h-52 bg-space-700 w-full relative overflow-hidden border-b border-white/5">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                {/* Overlay hover effect */}
                 <div className="absolute inset-0 bg-accent-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
 
-              <div className="p-6 flex flex-col flex-grow">
-                <h4 className="text-xl font-bold text-white mb-3 group-hover:text-accent-primary transition-colors">{project.title}</h4>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">{project.description}</p>
+              <div className="p-5 sm:p-6 flex flex-col flex-grow">
+                {/* ✅ line-clamp-2 keeps title to max 2 lines so all cards align */}
+                <h4 className="text-lg sm:text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-accent-primary transition-colors">
+                  {project.title}
+                </h4>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                {/* ✅ line-clamp-3 keeps descriptions uniform height across cards */}
+                <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-grow line-clamp-3">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-5">
                   {project.tags.map((tag, i) => (
                     <span key={i} className="px-2 py-1 bg-space-900 border border-white/10 rounded text-xs text-accent-primary font-mono">
                       {tag}
@@ -95,16 +104,27 @@ const Projects = () => {
                 </div>
 
                 <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
-                  <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+                  >
                     <FiGithub /> Code
                   </a>
                   {project.demo && project.demo !== '#' && (
-                    <a href={project.demo} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-gray-300 hover:text-accent-primary transition-colors ml-auto">
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 text-sm text-gray-300 hover:text-accent-primary transition-colors ml-auto"
+                    >
                       Live Demo <FiExternalLink />
                     </a>
                   )}
                 </div>
               </div>
+
             </div>
           ))}
         </div>
