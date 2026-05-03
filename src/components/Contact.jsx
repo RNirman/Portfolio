@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FiMail, FiMapPin, FiSend, FiCheckCircle, FiXCircle, FiLoader } from 'react-icons/fi';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', subject: 'New Submission from Portfolio' });
   const [status, setStatus] = useState();
 
   const handleSubmit = async (e) => {
@@ -20,7 +20,7 @@ const Contact = () => {
       const result = await response.json();
       if (result.success) {
         setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', subject: 'New Submission from Portfolio' });
         setTimeout(() => setStatus(null), 5000);
       } else {
         setStatus('error');
@@ -89,6 +89,7 @@ const Contact = () => {
                   className={inputClass}
                 />
               </div>
+              <input type="hidden" name="subject" value="New Submission from Portfolio"></input>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">Email</label>
