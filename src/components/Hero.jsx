@@ -1,5 +1,6 @@
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
 import profileImg from '../assets/profile.png';
+import TextPressure from './TextPreasure';
 
 const Hero = () => {
   return (
@@ -50,11 +51,27 @@ const Hero = () => {
             Available for Internships
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
-            Hi, I'm <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary animate-gradient">
-              Ravindu Nirman
+          <h1 className="w-full font-extrabold leading-tight mb-4">
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-2 text-white/90">
+              Hi, I'm
             </span>
+            <div className="w-full">
+              <TextPressure
+                text="Ravindu Nirman"
+                flex
+                alpha={false}
+                stroke={false}
+                width
+                weight
+                italic
+                textColor="transparent"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary animate-gradient pb-2"
+                strokeColor="#7B2CBF"
+                minFontSize={68}
+                minWeight={400}
+                minWidth={50}
+              />
+            </div>
           </h1>
 
           <h2 className="text-lg md:text-xl lg:text-2xl text-gray-400 font-medium mb-6 max-w-lg leading-relaxed">
