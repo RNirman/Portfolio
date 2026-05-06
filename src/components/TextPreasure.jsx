@@ -44,6 +44,7 @@ const TextPressure = ({
   className = '',
 
   minFontSize = 24,
+  maxFontSize = 120,
   minWeight = 100,
   maxWeight = 900,
   minWidth = 5,
@@ -95,7 +96,7 @@ const TextPressure = ({
 
     const { width: containerW, height: containerH } = containerRef.current.getBoundingClientRect();
 
-    let newFontSize = containerW / (chars.length / 2);
+    let newFontSize = containerW / chars.length;
     newFontSize = Math.max(newFontSize, minFontSize);
 
     setFontSize(newFontSize);
@@ -192,7 +193,7 @@ const TextPressure = ({
   }, [fontFamily, fontUrl, textColor, strokeColor, strokeWidth]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-hidden bg-transparent">
+    <div ref={containerRef} className="relative w-full h-full overflow-visible bg-transparent">
       {styleElement}
       <h1
         ref={titleRef}

@@ -65,9 +65,9 @@ const Hero = () => {
                 weight
                 italic
                 textColor="transparent"
-                className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary animate-gradient pb-2"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary animate-gradient pb-2 px-6 -mx-6"
                 strokeColor="#7B2CBF"
-                minFontSize={68}
+                minFontSize={70}
                 minWeight={400}
                 minWidth={50}
               />
