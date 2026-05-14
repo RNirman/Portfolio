@@ -5,6 +5,7 @@ import moviesphereImg from '../assets/moviesphere.png';
 import flixfinderImg from '../assets/flixfinder.png';
 import snapvaultImg from '../assets/snapvault.png';
 import auracastImg from '../assets/auracast.png';
+import codientImg from '../assets/codient.png';
 
 const Projects = () => {
   const projects = [
@@ -31,6 +32,14 @@ const Projects = () => {
       github: 'https://github.com/RNirman/MovieSphere-backend.git',
       demo: '#',
       image: moviesphereImg,
+    },
+    {
+      title: 'Codient – Online Code Judge System',
+      description: 'Codient is a robust, multi-language competitive programming environment that allows users to write, submit, and execute code safely in isolated containers while featuring real-time feedback and leaderboards.',
+      tags: ['React', 'Node.js', 'Docker', 'PostgreSQL'],
+      github: 'https://github.com/RNirman/Codient.git',
+      demo: '#',
+      image: codientImg,
     },
     {
       title: 'FlixFinder - Movie Discovery App',
@@ -79,7 +88,7 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-accent-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-black/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
 
               <div className="p-5 sm:p-6 flex flex-col flex-grow">
