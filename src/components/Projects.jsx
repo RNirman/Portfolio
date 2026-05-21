@@ -6,6 +6,7 @@ import flixfinderImg from '../assets/flixfinder.png';
 import snapvaultImg from '../assets/snapvault.png';
 import auracastImg from '../assets/auracast.png';
 import codientImg from '../assets/codient.png';
+import devhubImg from '../assets/devhub.png';
 
 const Projects = () => {
   const projects = [
@@ -13,7 +14,7 @@ const Projects = () => {
       title: 'WoodWise - Furniture Store Management',
       description: 'Designed a MERN stack furniture management system with inventory control, sales analytics, and an integrated AI-based 3D furniture visualization tool.',
       tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Supabase', 'Dall-E 3'],
-      github: 'https://github.com/kalinduhimasara07/WoodWise-BackEnd.git',
+      github: 'https://github.com/kalinduhimasara07/WoodWise-BackEnd',
       demo: 'https://wood-wise-xi.vercel.app/',
       image: woodwiseImg,
     },
@@ -21,7 +22,7 @@ const Projects = () => {
       title: 'RentIt - Renting Platform',
       description: 'A responsive PHP and MySQL web application enabling secure peer-to-peer item renting. Features detailed user dashboards and dynamic transaction tracking.',
       tags: ['React', 'PHP', 'MySQL'],
-      github: 'https://github.com/Thinuj01/RenItNew.git',
+      github: 'https://github.com/Thinuj01/RenItNew',
       demo: '#',
       image: rentitImg,
     },
@@ -29,7 +30,7 @@ const Projects = () => {
       title: 'MovieSphere - Movie Discovery',
       description: 'A full-stack Spring Boot and React movie discovery platform. Integrates the TMDB API with real-time data, JWT authentication, and administrative CRUD operations.',
       tags: ['React', 'Spring Boot', 'MySQL', 'TMDB API'],
-      github: 'https://github.com/RNirman/MovieSphere-backend.git',
+      github: 'https://github.com/RNirman/MovieSphere-backend',
       demo: '#',
       image: moviesphereImg,
     },
@@ -37,7 +38,7 @@ const Projects = () => {
       title: 'Codient – Online Code Judge System',
       description: 'Codient is a robust, multi-language competitive programming environment that allows users to write, submit, and execute code safely in isolated containers while featuring real-time feedback and leaderboards.',
       tags: ['React', 'Node.js', 'Docker', 'PostgreSQL'],
-      github: 'https://github.com/RNirman/Codient.git',
+      github: 'https://github.com/RNirman/Codient',
       demo: '#',
       image: codientImg,
     },
@@ -45,7 +46,7 @@ const Projects = () => {
       title: 'FlixFinder - Movie Discovery App',
       description: 'An Android application fetching real-time movie data via the TMDB API. Enables users to browse the latest releases, explore posters, and watch official trailers.',
       tags: ['Android', 'Kotlin', 'TMDB API'],
-      github: 'https://github.com/Lahirulakshan129/Flix-finder.git',
+      github: 'https://github.com/Lahirulakshan129/Flix-finder',
       demo: '#',
       image: flixfinderImg,
     },
@@ -53,7 +54,7 @@ const Projects = () => {
       title: 'SnapVault - Photo Sharing',
       description: 'A full-stack photo-sharing application built with FastAPI and React. Includes a rich community gallery, detailed insights, and real-time social interactions.',
       tags: ['React', 'FastAPI', 'MongoDB'],
-      github: 'https://github.com/RNirman/SnapVault-frontend.git',
+      github: 'https://github.com/RNirman/SnapVault-frontend',
       demo: '#',
       image: snapvaultImg,
     },
@@ -61,9 +62,17 @@ const Projects = () => {
       title: 'AuraCast - Weather Dashboard',
       description: 'A responsive weather dashboard built with Next.js and React Server Components. Securely fetches current conditions and 5-day forecasts via the OpenWeatherMap API.',
       tags: ['React', 'Next.js', 'OpenWeatherMap API'],
-      github: 'https://github.com/RNirman/AuraCast.git',
+      github: 'https://github.com/RNirman/AuraCast',
       demo: '#',
       image: auracastImg,
+    },
+    {
+      title: 'DEV_HUB - Developer Hub',
+      description: 'Developer Hub is a high-performance, real-time developer community platform engineered for scale and speed. It features a bespoke "Blueprint" aesthetic designed specifically for engineers.',
+      tags: ['React', 'Laravel', 'MySQL'],
+      github: 'https://github.com/RNirman/developer-hub',
+      demo: '#',
+      image: devhubImg,
     },
   ];
 
