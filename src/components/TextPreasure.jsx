@@ -1,6 +1,7 @@
 // Component ported from https://codepen.io/JuanFuentes/full/rgXKGQ
 
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
+import '@fontsource-variable/mona-sans';
 
 const dist = (a, b) => {
   const dx = b.x - a.x;
@@ -25,9 +26,9 @@ const debounce = (func, delay) => {
 
 const TextPressure = ({
   text = 'Compressa',
-  fontFamily = 'Compressa VF',
-  // This font is just an example, you should not use it in commercial projects.
-  fontUrl = 'https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2',
+  fontFamily = 'Mona Sans Variable',
+  // Leave this empty to use the bundled local font instead of a remote URL.
+  fontUrl = '',
 
   width = true,
   weight = true,
@@ -60,6 +61,7 @@ const TextPressure = ({
   const [fontSize, setFontSize] = useState(minFontSize);
   const [scaleY, setScaleY] = useState(1);
   const [lineHeight, setLineHeight] = useState(1);
+  const [reservedHeight, setReservedHeight] = useState(90);
 
   const chars = text.split('');
 
@@ -111,6 +113,9 @@ const TextPressure = ({
         const yRatio = containerH / textRect.height;
         setScaleY(yRatio);
         setLineHeight(yRatio);
+        setReservedHeight(Math.max(90, textRect.height * yRatio));
+      } else {
+        setReservedHeight(Math.max(90, textRect.height || 90));
       }
     });
   }, [chars.length, minFontSize, scale]);
@@ -167,13 +172,13 @@ const TextPressure = ({
   }, [width, weight, italic, alpha]);
 
   const styleElement = useMemo(() => {
+    const customFontFace = fontUrl
+      ? `@font-face { font-family: '${fontFamily}'; src: url('${fontUrl}'); font-style: normal; }`
+      : '';
+
     return (
       <style>{`
-        @font-face {
-          font-family: '${fontFamily}';
-          src: url('${fontUrl}');
-          font-style: normal;
-        }
+        ${customFontFace}
         .stroke span {
           position: relative;
           color: ${textColor};
@@ -193,19 +198,25 @@ const TextPressure = ({
   }, [fontFamily, fontUrl, textColor, strokeColor, strokeWidth]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-visible bg-transparent">
+    <div ref={containerRef} className="relative w-full max-w-full overflow-visible bg-transparent z-20" style={{ minHeight: `${reservedHeight}px` }}>
       {styleElement}
       <h1
         ref={titleRef}
-        className={`text-pressure-title ${className} ${flex ? 'flex justify-between' : ''
+        className={`text-pressure-title w-full max-w-full relative z-20 whitespace-nowrap ${className} ${flex ? 'flex justify-between' : ''
           } ${stroke ? 'stroke' : ''} uppercase text-center`}
         style={{
           fontFamily,
           fontSize: fontSize,
           lineHeight,
+          display: 'block',
+          whiteSpace: 'nowrap',
           transform: `scale(1, ${scaleY})`,
           transformOrigin: 'center top',
           margin: 0,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
           fontWeight: 100,
           color: stroke ? undefined : textColor
         }}

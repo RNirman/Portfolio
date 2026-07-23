@@ -11,38 +11,9 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+Cjwvc3ZnPg==')] -z-20 opacity-50"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full py-10 md:py-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid md:grid-cols-[1.15fr_0.85fr] gap-8 md:gap-12 items-center w-full py-10 md:py-0">
 
-        <div className="relative animate-float order-2 md:order-2 mx-auto w-full max-w-[240px] sm:max-w-xs md:max-w-none mt-2 md:mt-0">
-          <div className="glass-card aspect-square rounded-full flex items-center justify-center p-8 relative z-10 w-4/5 mx-auto
-              before:content-['']
-              before:absolute
-              before:inset-0
-              before:rounded-full
-              before:border-2
-              before:border-transparent
-              before:bg-gradient-to-tr
-              before:from-violet-600/50
-              before:via-slate-950/20
-              before:to-transparent
-              before:[-webkit-mask-image:linear-gradient(white,white)]
-              before:[-webkit-mask-composite:xor]
-              before:[mask-image:linear-gradient(white,white)]
-              before:[mask-composite:exclude]">
-            <div className="w-full h-full rounded-full bg-space-700/50 flex items-center justify-center border border-white/5 overflow-hidden">
-              <img src={profileImg} alt="Ravindu Nirman" className="w-full h-full object-cover" />
-            </div>
-          </div>
-
-          <div className="hidden md:flex absolute top-10 right-10 w-12 h-12 glass-card rounded-xl items-center justify-center rotate-12 delay-100">
-            <span className="text-accent-primary font-bold text-xl">{'</>'}</span>
-          </div>
-          <div className="hidden md:flex absolute bottom-10 left-10 w-14 h-14 glass-card rounded-xl items-center justify-center -rotate-6 delay-300">
-            <span className="text-accent-secondary font-bold text-xl">{'{ }'}</span>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-start z-10 order-1 md:order-1">
+        <div className="flex flex-col items-start relative z-20 order-1 md:order-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-primary/10 border border-accent-primary/20 text-accent-primary text-xs font-medium mb-5 md:mb-6">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"></span>
@@ -51,7 +22,7 @@ const Hero = () => {
             Available for Internships
           </div>
 
-          <h1 className="w-full font-extrabold leading-tight mb-4">
+          <h1 className="w-full font-extrabold leading-tight mb-4 relative z-20">
             <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-2 text-white/90">
               Hi, I'm
             </span>
@@ -67,7 +38,7 @@ const Hero = () => {
                 textColor="transparent"
                 className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary animate-gradient pb-2 px-6 -mx-6"
                 strokeColor="#7B2CBF"
-                minFontSize={70}
+                minFontSize={72}
                 minWeight={400}
                 minWidth={50}
               />
@@ -102,6 +73,35 @@ const Hero = () => {
             <a href="mailto:ravindunirman3@gmail.com" className="hover:text-accent-primary hover:-translate-y-1 transition-all">
               <FiMail size={24} />
             </a>
+          </div>
+        </div>
+
+        <div className="relative animate-float order-2 md:order-2 mx-auto w-full max-w-[240px] sm:max-w-xs md:max-w-none mt-2 md:mt-0">
+          <div className="glass-card aspect-square rounded-full flex items-center justify-center p-8 relative z-10 w-4/5 mx-auto
+              before:content-['']
+              before:absolute
+              before:inset-0
+              before:rounded-full
+              before:border-2
+              before:border-transparent
+              before:bg-gradient-to-tr
+              before:from-violet-600/50
+              before:via-slate-950/20
+              before:to-transparent
+              before:[-webkit-mask-image:linear-gradient(white,white)]
+              before:[-webkit-mask-composite:xor]
+              before:[mask-image:linear-gradient(white,white)]
+              before:[mask-composite:exclude]">
+            <div className="w-full h-full rounded-full bg-space-700/50 flex items-center justify-center border border-white/5 overflow-hidden">
+              <img src={profileImg} alt="Ravindu Nirman" className="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <div className="hidden md:flex absolute top-10 right-10 w-12 h-12 glass-card rounded-xl items-center justify-center rotate-12 delay-100">
+            <span className="text-accent-primary font-bold text-xl">{'</>'}</span>
+          </div>
+          <div className="hidden md:flex absolute bottom-10 left-10 w-14 h-14 glass-card rounded-xl items-center justify-center -rotate-6 delay-300">
+            <span className="text-accent-secondary font-bold text-xl">{'{ }'}</span>
           </div>
         </div>
 
