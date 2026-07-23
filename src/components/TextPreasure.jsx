@@ -62,6 +62,7 @@ const TextPressure = ({
   const [scaleY, setScaleY] = useState(1);
   const [lineHeight, setLineHeight] = useState(1);
   const [reservedHeight, setReservedHeight] = useState(90);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   const chars = text.split('');
 
@@ -75,9 +76,18 @@ const TextPressure = ({
       cursorRef.current.x = t.clientX;
       cursorRef.current.y = t.clientY;
     };
+    const handleTouchStart = e => {
+      const t = e.touches[0];
+      cursorRef.current.x = t.clientX;
+      cursorRef.current.y = t.clientY;
+    };
+
+    const touchEnabled = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+    setIsTouchDevice(touchEnabled);
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
 
     if (containerRef.current) {
       const { left, top, width, height } = containerRef.current.getBoundingClientRect();
@@ -90,6 +100,7 @@ const TextPressure = ({
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchstart', handleTouchStart);
     };
   }, []);
 
@@ -100,6 +111,10 @@ const TextPressure = ({
 
     let newFontSize = containerW / chars.length;
     newFontSize = Math.max(newFontSize, minFontSize);
+
+    if (isTouchDevice) {
+      newFontSize = Math.min(newFontSize, Math.max(minFontSize + 8, containerW / 12));
+    }
 
     setFontSize(newFontSize);
     setScaleY(1);
@@ -118,7 +133,7 @@ const TextPressure = ({
         setReservedHeight(Math.max(90, textRect.height || 90));
       }
     });
-  }, [chars.length, minFontSize, scale]);
+  }, [chars.length, minFontSize, scale, isTouchDevice]);
 
   useEffect(() => {
     const debouncedSetSize = debounce(setSize, 100);

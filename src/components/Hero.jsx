@@ -27,21 +27,40 @@ const Hero = () => {
               Hi, I'm
             </span>
             <div className="w-full">
-              <TextPressure
-                text="Ravindu Nirman"
-                flex
-                alpha={false}
-                stroke={false}
-                width
-                weight
-                italic
-                textColor="transparent"
-                className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary animate-gradient pb-2 px-6 -mx-6"
-                strokeColor="#7B2CBF"
-                minFontSize={72}
-                minWeight={400}
-                minWidth={50}
-              />
+              <div className="hidden md:block">
+                <TextPressure
+                  text="Ravindu Nirman"
+                  flex
+                  alpha={false}
+                  stroke={false}
+                  width
+                  weight
+                  italic
+                  textColor="transparent"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary animate-gradient pb-2 px-6 -mx-6"
+                  strokeColor="#7B2CBF"
+                  minFontSize={72}
+                  minWeight={400}
+                  minWidth={50}
+                />
+              </div>
+              <div className="block md:hidden">
+                <TextPressure
+                  text="R.Nirman"
+                  flex
+                  alpha={false}
+                  stroke={false}
+                  width
+                  weight
+                  italic
+                  textColor="transparent"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary animate-gradient pb-2 px-6 -mx-6"
+                  strokeColor="#7B2CBF"
+                  minFontSize={72}
+                  minWeight={400}
+                  minWidth={50}
+                />
+              </div>
             </div>
           </h1>
 
