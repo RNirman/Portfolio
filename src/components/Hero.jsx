@@ -46,7 +46,7 @@ const Hero = () => {
               </div>
               <div className="block md:hidden">
                 <TextPressure
-                  text="R.Nirman"
+                  text="Nirman"
                   flex
                   alpha={false}
                   stroke={false}
